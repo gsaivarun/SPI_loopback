@@ -6,7 +6,7 @@ char data[4] = {'0', '1', '1', '0'};
 
 int size = sizeof(data);
 void setup() {
-  Serial.begin(9600); // Initialize serial communication
+  Serial.begin(9600); 
 Serial.print(size);
   pinMode(Tx, OUTPUT);
   pinMode(Rx, INPUT);
@@ -16,7 +16,7 @@ Serial.print(size);
   for (int i = 0; i < size; i++) {
     digitalWrite(SCLK, HIGH);
     digitalWrite(Tx, data[i] == '0' ? LOW : HIGH);
-    delay(1000);  // Small delay to allow the data to be set before reading
+    delay(1000); 
     Serial.print(digitalRead(Rx));
     digitalWrite(SCLK, LOW);
     delay(500);
